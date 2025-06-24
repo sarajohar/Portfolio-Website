@@ -1,0 +1,495 @@
+/* Color Palette Variables */
+:root {
+  --color-bg-light: #FFE8D6; /* Peach Cream */
+  --color-primary: #CB997E;  /* Terracotta */
+  --color-accent: #DDBEA9;   /* Dusty Rose */
+  --color-text-soft: #A5A58D;/* Sage Fern */
+  --color-text-dark: #6B705C; /* Olive Green */
+}
+
+/* Dark Theme Variables Override */
+body.dark {
+  --color-bg-light: #6B705C; /* Olive Green */
+  --color-primary: #A5A58D;  /* Sage Fern */
+  --color-accent: #B7B7A4; /* Soft Apricot */
+  --color-text-soft: #FFE8D6; /* Peach Cream */
+  --color-text-dark: #DDBEA9; /* Dusty Rose */
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+/* Navbar Styling */
+.custom-navbar {
+  background-color: var(--color-bg-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+  padding: 0.6rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--color-text-dark);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--color-text-dark);
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--color-text-dark);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+#themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--color-text-dark);
+  padding: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+#themeToggle:hover {
+  color: var(--color-accent);
+}
+
+#themeToggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*Section landing */
+.landing {
+  position: relative; /* ضروري حتى ::before يشتغل */
+  min-height: 100vh;
+  padding: 3rem 0;
+  background-image: url("images/LadingBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* لحماية المحتوى من الـ ::before */
+}
+
+/* التراكب الشفاف فوق الصورة */
+.landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.5)),
+    url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/topography.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: floatBg 20s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+/* هذا الكود ب يضمن إن كل المحتوى داخل الـ landing section يطلع فوق الخلفية */
+.landing>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* للحركة يل على أطراف الخلفية */
+@keyframes floatBg {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(20px, -15px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate(0, -30px);
+  }
+
+  75% {
+    transform: translate(-20px, -15px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.text-area h1 {
+  font-size: 3rem;
+}
+
+.highlight {
+  color: var(--color-primary);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+}
+
+/* Image Styling */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  transition: 0.3s ease;
+}
+
+.wave-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover .wave-img {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 30px rgba(203, 153, 126, 0.4);
+  /* Terracotta shadow */
+}
+
+.animated-text-wrapper {
+  min-height: 40px;
+  color: var(--color-text-dark);
+}
+
+.cursor {
+  color: var(--color-text-soft);
+  animation: blink 1s step-start infinite;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.social-icons a {
+  color: var(--color-text-dark);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+
+/* Section About */
+/* About Me Text Styling */
+#about {
+  background-color: #FFFFFF;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+/* Tabs */
+/* Light Mode Tabs */
+.tab-content {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Tabs */
+body.dark .tab-content {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+/* Nav Tabs - Shared Styling */
+.nav-tabs .nav-link {
+  color: var(--color-text-soft);
+  background-color: transparent;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+/* Nav Tabs in Dark Mode */
+body.dark .nav-tabs .nav-link {
+  color: var(--color-text-soft);
+}
+
+body.dark .nav-tabs .nav-link.active {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+}
+
+/* Image */
+.about-img {
+  width: 80%;
+  max-width: 80%;
+  border-radius: 8px;
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideInImage 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+
+/* ثبت لون فقرة About Me في الوضع الداكن */
+body.dark #about p {
+  color: #6B705C;
+}
+
+/* ثبيت لون عناوين التبويبات في الوضع الداكن */
+body.dark .nav-tabs .nav-link {
+  color: #6B705C;
+}
+
+body.dark .nav-tabs .nav-link.active {
+  color: #6B705C;
+}
+
+/* Section Skills */
+.skills-section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-image: url("images/Background2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*  التراكب الشفاف لتفتيح الخلفية */
+.skills-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background: linear-gradient(rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.55)),
+    url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/topography.svg');
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.skills-section>* {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-title {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.skill-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-list li::before {
+  content: "•";
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.skill-list li {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.skill-card {
+  position: relative;
+  background-color: var(--color-bg-light);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--color-primary);
+}
+
+
+/* Section Project */
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("images/backproject.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25; /* تفتيح الخلفية */
+  pointer-events: none;
+}
+
+.project-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.1);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.75s ease;
+  z-index: 2;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.projects-section {
+  position: relative;
+  background-image: url("images/BackgroundProject.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* تفتيح الخلفية باستخدام ::before */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-section>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Contact */
+.bg-img-section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bg-img-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.65),
+      rgba(255, 255, 255, 0.55)),
+    url("images/Background2.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  pointer-events: none;
+}
+
+.bg-img-section>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* تصميم صناديق الفورم والمعلومات */
+.contact-form,
+.contact-info {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}

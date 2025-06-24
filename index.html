@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Sara Johar</title>
+  <link rel="icon" href="icons/myicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+      <h4 class="fw-bold">Sara Johar</h4>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home" data-key="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-key="about">About me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-key="skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-key="projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-key="contact">Contact</a></li>
+
+          <li class="nav-item">
+            <button id="themeToggle" class="btn-theme">
+              <i class="bi bi-moon-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Landing -->
+  <section class="landing d-flex align-items-center" id="home">
+    <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-center gap-5">
+
+      <!-- Text Area -->
+      <div class="text-area text-center" data-aos="fade-right" data-aos-duration="1200">
+        <h1 class="fw-bold">Hi, I'm <span class="highlight">Sara Johar</span></h1>
+
+        <div class="animated-text-wrapper d-flex justify-content-center align-items-center">
+          <h2 class="fw-semibold fs-4 mb-0">
+            <span id="typing-text"></span>
+            <span class="cursor">|</span>
+          </h2>
+        </div>
+
+        <!-- Download CV -->
+        <a href="CV/sara_johar_cv.pdf" class="btn btn-primary mt-4" download>Download CV</a>
+
+        <!-- github & Linkedin icon -->
+        <div class="social-icons d-flex justify-content-center gap-4 mt-3">
+          <a href="https://github.com/sarajohar" target="_blank" class="social-link">
+            <i class="fab fa-github fa-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/sara-johar-9b7226254" target="_blank" class="social-link">
+            <i class="fab fa-linkedin fa-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Landing Image -->
+      <div class="image-area" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+        <div class="image-wrapper">
+          <img src="images/Landing.jpg" alt="Sara Profile" class="img-fluid rounded-circle wave-img" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Aboutme -->
+  <section id="about" class="py-5" data-aos="fade-up">
+    <div class="container">
+      <div class="row align-items-center flex-column flex-md-row">
+        <!-- Aboutme Image -->
+        <div class="col-md-5 text-center mb-4 mb-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/AboutMe.jpg" alt="Sara Johar" class="img-fluid rounded shadow-sm"
+            style="max-height: 400px;" />
+        </div>
+
+        <!-- Info and Tabs -->
+        <div class="col-md-7" data-aos="fade-left" data-aos-delay="400">
+          <h2 class="fw-bold mb-3">About Me</h2>
+          <p class="mb-4">
+            Hi, I’m <strong>Sara Johar</strong>, I’m a Software Engineering graduate with a strong foundation in web
+            development, especially using .NET and Angular, along with solid knowledge across various software
+            engineering domains. I’m passionate about creating practical and user-friendly web applications, and I enjoy
+            working on projects that blend creativity with real-world impact. I’m always eager to learn, grow, and
+            explore new technologies while building meaningful solutions.
+          </p>
+
+          <!-- Tabs -->
+          <ul class="nav nav-tabs mb-3" id="aboutTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="education-tab" data-bs-toggle="tab" data-bs-target="#education"
+                type="button" role="tab">
+                Education
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="internship-tab" data-bs-toggle="tab" data-bs-target="#internship"
+                type="button" role="tab">
+                Internship
+              </button>
+            </li>
+          </ul>
+          <!-- Tab Content -->
+          <div class="tab-content" id="aboutTabsContent">
+            <div class="tab-pane fade show active" id="education" role="tabpanel">
+              <ul>
+                <li>Bachelor’s Degree in Software Engineering – Hashemite University (October 2021 – June 2025)</li>
+                <li>Graduated with a “Very Good” GPA (3.29/4.0)</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="internship" role="tabpanel">
+              <ul>
+                <li>Backend Intern @ Sky Software – .NET Training , 2025</li>
+                <li>Training with .Net and Angular , 2025</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-5" data-aos="fade-down">My Skills</h2>
+
+      <div class="row gy-4">
+        <!-- Card 1 -->
+        <div class="col-md-6" data-aos="flip-left" data-aos-delay="100">
+          <div class="skill-card p-4">
+            <h4 class="skill-title">Frontend Development</h4>
+            <ul class="skill-list">
+              <li>HTML </li>
+              <li>CSS, Bootstrap</li>
+              <li>TypeScript, Angular</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6" data-aos="flip-left" data-aos-delay="200">
+          <div class="skill-card p-4">
+            <h4 class="skill-title">Backend Development</h4>
+            <ul class="skill-list">
+              <li>C#, SQL Server</li>
+              <li>LINQ, EF Core</li>
+              <li>ASP.NET Core MVC / API</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6" data-aos="flip-left" data-aos-delay="300">
+          <div class="skill-card p-4">
+            <h4 class="skill-title">Software Engineering</h4>
+            <ul class="skill-list">
+              <li>SOLID Principles</li>
+              <li>Object-Oriented Programming (OOP)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
+          <div class="skill-card p-4">
+            <h4 class="skill-title">Soft Skills</h4>
+            <ul class="skill-list">
+              <li>Teamwork, Communication</li>
+              <li>Time Management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects -->
+  <section id="projects" class="projects-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-3" data-aos="fade-up">My Projects</h2>
+      <p class="fst-italic text-center" data-aos="fade-up" data-aos-delay="100">
+        Here are some of the most exciting projects I’ve built recently, combining functionality and aesthetics.
+      </p>
+
+      <div class="row g-4 mt-4">
+        <!-- Project 1 -->
+        <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="200">
+          <div class="project-card position-relative overflow-hidden">
+            <img src="images/project1.jpg" class="w-100 project-img" alt="Project 1">
+            <div class="overlay d-flex flex-column justify-content-end p-4">
+              <h5 class="text-white fw-bold mb-1">Exam Scheduling System</h5>
+              <p class="text-white-50 mb-2">
+                Web based application designed for managing exam reservations efficiently and solve as much as possible
+                contradiction problem in exam time. Built using ASP.NET Core MVC and SQL Server.
+              </p>
+              <a href="#" target="_blank" class="text-white fs-5">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-6" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="project-card position-relative overflow-hidden">
+            <img src="images/project2.jpg" class="w-100 project-img" alt="Project 2">
+            <div class="overlay d-flex flex-column justify-content-end p-4">
+              <h5 class="text-white fw-bold mb-1">Bidding Management System</h5>
+              <p class="text-white-50 mb-2">
+                An Employee Management and Vacation Workflow System built using .NET Core and Entity Framework Core. It
+                handles employee data, vacation request lifecycles, and reporting structure with full CRUD operations
+                and optimized LINQ queries.
+              </p>
+              <a href="#" target="_blank" class="text-white fs-5">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Me -->
+  <section id="contact" class="contact-section bg-img-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center fw-bold mb-4" data-aos="fade-up">Contact Me</h2>
+      <div class="row align-items-stretch g-4">
+
+        <!-- Contact Form -->
+        <div class="col-md-6" data-aos="fade-right">
+          <form class="contact-form p-4 rounded shadow-sm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-left">
+          <div class="contact-info p-4 rounded shadow-sm text-center">
+            <p class="mb-3">You can also find me on:</p>
+            <div class="social-icons d-flex justify-content-center gap-3 mb-3">
+              <a href="https://www.linkedin.com/in/sara-johar-9b7226254"><i class="fab fa-linkedin fa-2x"></i></a>
+              <a href="https://github.com/sarajohar"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+            <p class="small text-muted">Or email me directly: <br><strong>sarajohar@email.com</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // مدة الحركة 1 ثانية
+      once: false, //تظهر الحركة كل ما اعمل scroll
+    });
+  </script>
+  <script src="dist/script.js"></script>
+</body>
+
+</html>
